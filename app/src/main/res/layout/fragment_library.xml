@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023-2024 Azokle Private Limited
+     SPDX-License-Identifier: Apache-2.0
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:paddingHorizontal="16dp"
+        app:liftOnScrollTargetViewId="@+id/libraryNestedScrollView">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:title="@string/library_title" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/libraryNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Single root child required by NestedScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <!-- ── CATEGORIES ── -->
+            <TextView
+                android:id="@+id/categoriesTitleTextView"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="4dp"
+                android:letterSpacing="0.08"
+                android:textColor="?attr/colorPrimary"
+                android:text="@string/categories_title" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/photosAlbumListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/album_photos"
+                        app:leadingIconImage="@drawable/ic_photo_size_select_actual"
+                        app:showDivider="true" />
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/videosAlbumListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/album_videos"
+                        app:leadingIconImage="@drawable/ic_play_circle_outline"
+                        app:showDivider="true" />
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/favoritesAlbumListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/album_favorites"
+                        app:leadingIconImage="@drawable/ic_star_border"
+                        app:showDivider="true" />
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/trashAlbumListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/album_trash"
+                        app:leadingIconImage="@drawable/ic_delete" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── ABOUT ── -->
+            <TextView
+                android:id="@+id/aboutTitleTextView"
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="4dp"
+                android:letterSpacing="0.08"
+                android:textColor="?attr/colorPrimary"
+                android:text="@string/about_title" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="16dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerLow">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/aboutUsListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/about_us"
+                        app:supportingText="@string/about_us_supporting"
+                        app:leadingIconImage="@drawable/ic_info"
+                        app:showDivider="true" />
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/privacyPolicyListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/privacy_policy"
+                        app:supportingText="@string/privacy_policy_supporting"
+                        app:leadingIconImage="@drawable/ic_privacy_policy"
+                        app:showDivider="true" />
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/companyListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/company_website"
+                        app:supportingText="@string/company_website_supporting"
+                        app:leadingIconImage="@drawable/ic_language"
+                        app:showDivider="true" />
+
+                    <org.azokle.gallery.ui.ListItem
+                        android:id="@+id/licensesListItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:headlineText="@string/licenses"
+                        app:supportingText="@string/licenses_supporting"
+                        app:leadingIconImage="@drawable/ic_description" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ── FOOTER ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/aboutVersionTextView"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:text="@string/app_name" />
+
+                <TextView
+                    android:id="@+id/aboutFooterTextView"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:text="@string/about_footer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

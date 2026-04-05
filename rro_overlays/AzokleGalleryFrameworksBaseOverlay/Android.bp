@@ -1,0 +1,13 @@
+//
+// SPDX-FileCopyrightText: 2024 Azokle Private Limited
+// SPDX-License-Identifier: Apache-2.0
+//
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+runtime_resource_overlay {
+    name: "AzokleGalleryFrameworksBaseOverlay",
+    product_specific: true,
+}

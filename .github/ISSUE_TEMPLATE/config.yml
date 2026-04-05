@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Discussion
+    url: https://github.com/azoklesoftware/azokle-gallery-android/discussions
+    about: Ask questions, share ideas, or get help from the community.
+  - name: 🌐 Azokle Website
+    url: https://azokle.com
+    about: Learn more about Azokle Private Limited.
+  - name: 🔒 Privacy Policy
+    url: https://policies.azokle.com/privacy
+    about: Read our privacy policy.
